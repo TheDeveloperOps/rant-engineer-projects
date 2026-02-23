@@ -70,7 +70,8 @@ Creates a cinematic dialogue animation effect
 
 
 
-```
+````markdown
+```cpp
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -100,25 +101,21 @@ void setup() {
 }
 
 void loop() {
-
   for (int i = 0; i < totalWords; i++) {
-
     display.clearDisplay();
     display.setCursor(0, 10);
     display.println(dialogue[i]);
     display.display();
 
     if (dialogue[i].endsWith(",")) {
-      delay(600);      // pause for comma
+      delay(600);
     } 
     else if (dialogue[i].endsWith(".")) {
-      delay(1000);     // pause for full stop
+      delay(1000);
     } 
     else {
-      delay(350);      // normal word delay
+      delay(350);
     }
   }
-
-  delay(2000);         // pause before repeating
+  delay(2000);
 }
-```
